@@ -1,26 +1,187 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Custom CSS for additional styles not covered by Tailwind */
+@layer base {
+  /* Typography */
+  .font-display {
+    font-family: var(--font-playfair), serif;
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  .font-body {
+    font-family: var(--font-inter), sans-serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Glass Effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  /* Hover Effects */
+  .hover-lift {
+    transition: all 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Pretty Button Styles */
+  .btn-primary {
+    @apply bg-coffee-dark hover:bg-coffee-medium text-cream font-body font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:scale-105 shadow-coffee;
+  }
+
+  .btn-secondary {
+    @apply bg-caramel hover:bg-honey text-coffee-dark font-body font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:scale-105 shadow-caramel;
+  }
+
+  .btn-accent {
+    @apply bg-rose-gold hover:bg-lavender text-coffee-dark font-body font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:scale-105 shadow-rose-gold;
+  }
+
+  .btn-outline {
+    @apply border-2 border-coffee-dark text-coffee-dark hover:bg-coffee-dark hover:text-cream font-body font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:scale-105;
+  }
+
+  /* Gradient Background Classes - All using 135deg linear-gradient */
+  .gradient-bg-1 {
+    background: linear-gradient(
+      135deg,
+      #fdf8f3 0%,
+      #e6b17a 25%,
+      #d4a574 50%,
+      #b8a9c9 75%,
+      #9caf88 100%
+    );
+  }
+
+  .gradient-bg-2 {
+    background: linear-gradient(
+      135deg,
+      #e8b4b8 0%,
+      #d4a574 25%,
+      #e6b17a 50%,
+      #9caf88 75%,
+      #b8a9c9 100%
+    );
+  }
+
+  .gradient-bg-3 {
+    background: linear-gradient(
+      135deg,
+      #9caf88 0%,
+      #b8a9c9 25%,
+      #e8b4b8 50%,
+      #d4a574 75%,
+      #e6b17a 100%
+    );
+  }
+
+  .gradient-bg-4 {
+    background: linear-gradient(
+      135deg,
+      #b8a9c9 0%,
+      #e8b4b8 25%,
+      #d4a574 50%,
+      #e6b17a 75%,
+      #9caf88 100%
+    );
+  }
+
+  .gradient-bg-5 {
+    background: linear-gradient(
+      135deg,
+      #d4a574 0%,
+      #e6b17a 25%,
+      #9caf88 50%,
+      #b8a9c9 75%,
+      #e8b4b8 100%
+    );
+  }
+
+  .gradient-bg-6 {
+    background: linear-gradient(
+      135deg,
+      #e6b17a 0%,
+      #9caf88 25%,
+      #b8a9c9 50%,
+      #e8b4b8 75%,
+      #d4a574 100%
+    );
+  }
+
+  /* Warm gradient variations */
+  .gradient-bg-warm-1 {
+    background: linear-gradient(
+      135deg,
+      #fdf8f3 0%,
+      #f7f1e8 25%,
+      #e6b17a 50%,
+      #d4a574 75%,
+      #a67b5b 100%
+    );
+  }
+
+  .gradient-bg-warm-2 {
+    background: linear-gradient(
+      135deg,
+      #f7f1e8 0%,
+      #e6b17a 25%,
+      #d4a574 50%,
+      #a67b5b 75%,
+      #8b6f47 100%
+    );
+  }
+
+  .gradient-bg-warm-3 {
+    background: linear-gradient(
+      135deg,
+      #e6b17a 0%,
+      #d4a574 25%,
+      #a67b5b 50%,
+      #8b6f47 75%,
+      #2d1810 100%
+    );
+  }
+
+  /* Cool gradient variations */
+  .gradient-bg-cool-1 {
+    background: linear-gradient(
+      135deg,
+      #fdf8f3 0%,
+      #b8a9c9 25%,
+      #9caf88 50%,
+      #e8b4b8 75%,
+      #d4a574 100%
+    );
+  }
+
+  .gradient-bg-cool-2 {
+    background: linear-gradient(
+      135deg,
+      #b8a9c9 0%,
+      #9caf88 25%,
+      #e8b4b8 50%,
+      #d4a574 75%,
+      #e6b17a 100%
+    );
+  }
+
+  .gradient-bg-cool-3 {
+    background: linear-gradient(
+      135deg,
+      #9caf88 0%,
+      #e8b4b8 25%,
+      #d4a574 50%,
+      #e6b17a 75%,
+      #b8a9c9 100%
+    );
+  }
 }
