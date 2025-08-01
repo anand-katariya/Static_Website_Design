@@ -50,8 +50,12 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <button className="btn-primary">View Our Menu</button>
-            <button className="btn-outline">Book a Table</button>
+            <button className="btn-primary">
+              <a href="/menu">View Our Menu</a>
+            </button>
+            <button className="btn-outline">
+              Book a Table
+            </button>
           </motion.div>
         </motion.div>
 
