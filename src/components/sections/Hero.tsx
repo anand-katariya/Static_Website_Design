@@ -53,9 +53,9 @@ export default function Hero() {
             <button className="btn-primary">
               <a href="/menu">View Our Menu</a>
             </button>
-            <button className="btn-outline">
+            {/* <button className="btn-outline">
               Book a Table
-            </button>
+            </button> */}
           </motion.div>
         </motion.div>
 
